@@ -123,7 +123,38 @@
       }
     ]
   },
-  "overrides": [],
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        // "**/__stories__/**/*.[jt]s?(x)",
+        // "*.stories.@(ts|tsx|js|jsx|mjs|cjs)",
+        "**/?(*.)+(spec|test).[jt]s?(x)",
+        "**/?(*.)+(cy).[jt]s?(x)"
+      ],
+      "extends": []
+    },
+    {
+      "files": [
+        "**/*.stories.[jt]s?(x)",
+        "**/utils/**",
+        "**/common/*.[jt]s?(x)"
+      ],
+      "rules": {
+        "no-restricted-imports": "warn"
+      }
+    },
+    {
+      "files": [
+        "**/utils/**",
+        "**/common/*.[jt]s?(x)"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
   "settings": {
     "import/resolver": {
       "alias": {
