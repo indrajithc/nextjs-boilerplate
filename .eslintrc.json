@@ -1,3 +1,59 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [ 
+          [
+            "@widgets",
+            "./src/widgets"
+          ],
+          [
+            "@utils",
+            "./src/utils"
+          ],
+          [
+            "@api",
+            "./src/api"
+          ],
+          [
+            "@components",
+            "./src/components/common"
+          ], 
+          [
+            "@skeletons",
+            "./src/components/skeletons"
+          ],
+          [
+            "@context",
+            "./src/components/context"
+          ],
+          [
+            "@hooks",
+            "./src/components/hooks"
+          ],
+          [
+            "@core",
+            "./src/components/core"
+          ],
+          [
+            "@i18n",
+            "./src/i18n"
+          ],
+          [
+            "@app",
+            "./src"
+          ],
+          [
+            "@mocks",
+            "./__mocks__"
+          ]
+        ],
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  }
 }
