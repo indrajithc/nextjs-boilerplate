@@ -2,7 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:react/recommended",
-    "plugin:json/recommended"
+    "plugin:json/recommended",
+    "prettier"
   ],
   "globals": {
     "React": "readonly",
@@ -77,12 +78,6 @@
       }
     ],
     "no-eval": "warn",
-    "import/no-cycle": [
-      2,
-      {
-        "maxDepth": 1
-      }
-    ],
     "class-methods-use-this": [
       "error",
       {
