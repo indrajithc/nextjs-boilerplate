@@ -1,0 +1,6 @@
+/build
+/coverage
+.yarn
+node_modules
+.next
+dist
