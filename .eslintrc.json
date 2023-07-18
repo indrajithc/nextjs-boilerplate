@@ -11,11 +11,117 @@
   },
   "plugins": [
     "react",
-    "react-hooks"
+    "react-hooks",
+    "unused-imports"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error"
+    "react-hooks/exhaustive-deps": "error",
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "import/prefer-default-export": "warn",
+    "react/forbid-prop-types": "warn",
+    "unused-imports/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 160
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "info",
+          "table"
+        ]
+      }
+    ],
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "consistent-return": [
+      "warn",
+      {
+        "treatUndefinedAsUnspecified": false
+      }
+    ],
+    "react/no-array-index-key": [
+      "warn"
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "warn",
+      {
+        "components": [
+          "Link",
+          "a"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ],
+    "no-eval": "warn",
+    "import/no-cycle": [
+      2,
+      {
+        "maxDepth": 1
+      }
+    ],
+    "class-methods-use-this": [
+      "error",
+      {
+        "enforceForClassFields": false
+      }
+    ],
+    "no-useless-escape": "warn",
+    "camelcase": "warn",
+    "react/no-unknown-property": "warn",
+    /* Custom rules */
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "moment",
+            "message": "Instead of using moment use native methods."
+          }
+        ],
+        "patterns": [
+          {
+            "group": [
+              "react-toastify",
+              "toast",
+              "@utils/toast"
+            ],
+            "message": "Instead of using toast use useToast() from `@hooks/useToast`"
+          }
+        ]
+      }
+    ],
+    "no-restricted-properties": [
+      2,
+      {
+        "object": "window",
+        "property": "dataLayer",
+        "message": "Please use `analyticsWorker` for any dataLayer updates"
+      }
+    ]
   },
   "overrides": [],
   "settings": {
