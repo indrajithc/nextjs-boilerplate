@@ -1,9 +1,27 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:json/recommended"
+  ],
+  "globals": {
+    "React": "readonly",
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "overrides": [],
   "settings": {
     "import/resolver": {
       "alias": {
-        "map": [ 
+        "map": [
           [
             "@widgets",
             "./src/widgets"
@@ -19,7 +37,7 @@
           [
             "@components",
             "./src/components/common"
-          ], 
+          ],
           [
             "@skeletons",
             "./src/components/skeletons"
