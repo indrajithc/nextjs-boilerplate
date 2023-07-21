@@ -1,0 +1,42 @@
+{
+  "defaultLocale": "en",
+  "locales": [
+    "en",
+    "ar"
+  ],
+  "image": {
+    "deviceSizes": [
+      360,
+      768,
+      1020,
+      1440,
+      2048,
+      3840
+    ],
+    "domains": [],
+    "breakpoints": {
+      "xs": {
+        "maxWidth": 359,
+        "minWidth": 0
+      },
+      "sm": {
+        "maxWidth": 767,
+        "minWidth": 360
+      },
+      "md": {
+        "maxWidth": 1019,
+        "minWidth": 768
+      },
+      "lg": {
+        "maxWidth": 1439,
+        "minWidth": 1020
+      },
+      "xl": {
+        "minWidth": 1440
+      }
+    },
+    "aspectRatios": {
+      "PRODUCT_CARD": 0.88
+    }
+  }
+}
