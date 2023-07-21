@@ -1,4 +1,23 @@
 {
+  "eslint.workingDirectories": [
+    "./",
+  ],
+  "eslint.options": {
+    "overrideConfigFile": "./.eslintrc.json"
+  },
+  "prettier.configPath": "./.prettierrc",
+  "eslint.validate": [
+    "vue",
+    "html",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "scss"
+  ],
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.format.enable": true,
   "editor.formatOnSave": true
 }
