@@ -8,7 +8,7 @@
     "yarn": "please-use-npm"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 9900",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
