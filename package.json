@@ -12,7 +12,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "next": "13.4.10",
@@ -20,6 +22,14 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.2.0-alpha.0",
+    "@storybook/addon-interactions": "^7.2.0-alpha.0",
+    "@storybook/addon-links": "^7.2.0-alpha.0",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.0-alpha.0",
+    "@storybook/nextjs": "^7.2.0-alpha.0",
+    "@storybook/react": "^7.2.0-alpha.0",
+    "@storybook/testing-library": "^0.2.0",
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -29,11 +39,14 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "postcss": "8.4.26",
     "prettier": "^3.0.0",
+    "storybook": "^7.2.0-alpha.0",
+    "storybook-dark-mode": "^3.0.0",
     "typescript": "5.1.6"
   },
   "lint-staged": {
