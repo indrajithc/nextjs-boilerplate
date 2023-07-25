@@ -1,9 +1,16 @@
 import { FC } from "react";
 
-interface homePageProps {}
+import SampleWidgetOne from "@widgets/SampleWidgetOne";
 
-const HomePage: FC<homePageProps> = () => {
-  return <main>Home page</main>;
+interface HomePageProps {}
+
+const HomePage: FC<HomePageProps> = () => {
+  return (
+    <main>
+      Home page
+      <SampleWidgetOne />
+    </main>
+  );
 };
 
 export default HomePage;
