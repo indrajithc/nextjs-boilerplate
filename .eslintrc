@@ -3,6 +3,8 @@
     "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:json/recommended",
+    "plugin:cypress/recommended",
+    "plugin:storybook/recommended",
     "prettier"
   ],
   "globals": {
@@ -14,13 +16,31 @@
     "react",
     "react-hooks",
     "unused-imports",
-    "prettier"
+    "prettier",
+    "html"
   ],
   "rules": {
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "auto"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "packageDir": ".",
+        "devDependencies": [
+          "**/jest.*",
+          "**/*.test.[jt]s?(x)",
+          "**/*.spec.[jt]s?(x)",
+          "**/*.cy.[jt]s?(x)",
+          "**/*.stories.[jt]s?(x)",
+          "**/test-libs/**",
+          "**/__mocks__/**",
+          "**/cypress.*",
+          "**/cypress/**"
+        ]
       }
     ],
     "react-hooks/rules-of-hooks": "error",

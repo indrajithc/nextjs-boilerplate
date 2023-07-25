@@ -3,7 +3,7 @@
     "./",
   ],
   "eslint.options": {
-    "overrideConfigFile": "./.eslintrc.json"
+    "overrideConfigFile": "./.eslintrc"
   },
   "prettier.configPath": "./.prettierrc",
   "eslint.validate": [
