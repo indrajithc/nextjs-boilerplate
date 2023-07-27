@@ -4,6 +4,14 @@ const config = require("./config");
 
 const { domains, deviceSizes } = config.image || {};
 
+const serverRuntimeConfig = {
+  ENVIRONMENT: config.env,
+  APP_API_HOST: config.appApiHost,
+  DISABLE_CONSTRUCT_API_URL: config.disableConstructApiUrl,
+  APP_API_PROTOCOL: config.appApiProtocol,
+  SITE_NAME_SEPARATOR: config.siteNameSeparator,
+};
+
 const nextConfig = {
   /* config options here */
   images: {
@@ -12,6 +20,7 @@ const nextConfig = {
     ...(deviceSizes ? { deviceSizes } : {}),
     loader: "default",
   },
+  serverRuntimeConfig,
 };
 
 module.exports = nextConfig;
