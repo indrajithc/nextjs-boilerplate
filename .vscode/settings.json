@@ -6,18 +6,30 @@
     "overrideConfigFile": "./.eslintrc"
   },
   "prettier.configPath": "./.prettierrc",
-  "eslint.validate": [
-    "vue",
-    "html",
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-    "json",
-    "scss"
-  ],
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "eslint.format.enable": true,
   "editor.formatOnSave": true
 }
