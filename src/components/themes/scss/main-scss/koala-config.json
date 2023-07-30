@@ -1,0 +1,23 @@
+{
+	"mappings": [
+		{
+			"src": "./",
+			"dest": "../../css/"
+		}
+	],
+	"ignores": [
+		"*.css"
+	],
+	"options": {
+		"autocompile": false,
+		"outputStyle": "compressed",
+		"lineComments": false,
+		"debugInfo": false,
+		"sourceMap": false,
+		"unixNewlines": false,
+		"autoprefix": false
+	},
+	"customOptions": [],
+	"includePaths": [],
+	"requireLibs": []
+}

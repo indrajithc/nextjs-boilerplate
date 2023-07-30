@@ -1,0 +1,135 @@
+.btn-dropdown {
+  position: relative;
+  text-align: start;
+  border-color: $border-color;
+  padding-left: 1rem;
+  padding-right: 2.25rem;
+
+  &:hover,
+  &:active {
+    background: $gray-400;
+  }
+
+  .caret {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+  }
+
+  &.is-valid {
+    border-color: $form-feedback-valid-color;
+  }
+
+  &.is-invalid {
+    border-color: $form-feedback-invalid-color;
+  }
+}
+
+.dropdown {
+  .btn-dropdown {
+    &:active {
+      border-color: $input-border-color;
+    }
+  }
+}
+
+.dropdown-menu {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-height: 340px;
+  overflow-y: auto;
+
+  .dropdown-item {
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1;
+  }
+}
+
+.link {
+  font-weight: $font-weight-medium;
+
+  &.primary {
+    color: $primary;
+
+    &:hover {
+      color: shade-color($primary, 20%);
+    }
+  }
+
+  &.secondary {
+    color: $secondary;
+
+    &:hover {
+      color: shade-color($secondary, 20%);
+    }
+  }
+
+  &.tertiary {
+    color: $tertiary;
+
+    &:hover {
+      color: shade-color($tertiary, 20%);
+    }
+  }
+
+  &.quad {
+    color: $quad;
+
+    &:hover {
+      color: shade-color($quad, 20%);
+    }
+  }
+
+  &.base {
+    color: $base;
+
+    &:hover {
+      color: shade-color($base, 20%);
+    }
+  }
+
+  &.info {
+    color: $info;
+
+    &:hover {
+      color: shade-color($info, 20%);
+    }
+  }
+
+  &.danger {
+    color: $danger;
+
+    &:hover {
+      color: shade-color($danger, 20%);
+    }
+  }
+
+  &.d-flex {
+    align-items: center;
+  }
+}
+
+.btn-link {
+  font-weight: $font-weight-medium;
+
+  .icon {
+    &.fill-muted {
+      &:hover {
+        fill: $primary;
+      }
+    }
+  }
+}
+
+.btn-warning {
+  color: $white;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white;
+  }
+}

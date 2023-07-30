@@ -1,0 +1,155 @@
+.toast {
+  position: fixed;
+  bottom: 1rem;
+  transition: $transition-base;
+  z-index: $zindex-toast;
+
+  [dir="ltr"] & {
+    right: 1rem;
+  }
+
+  [dir="rtl"] & {
+    left: 1rem;
+  }
+
+  .toast-body {
+    display: flex;
+  }
+
+  .title {
+    font-weight: $font-weight-semibold;
+  }
+
+  .toast-action {
+    display: flex;
+    align-items: center;
+
+    .vr {
+      width: 10px;
+      height: 100%;
+      min-height: 65px;
+      border-radius: $border-radius;
+      opacity: 1;
+    }
+
+    .toast-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.875rem;
+      height: 2.875rem;
+      border-radius: $border-radius-pill;
+      margin-right: 1.25rem;
+      margin-left: 1.25rem;
+    }
+  }
+
+  .toast-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    [dir="ltr"] & {
+      padding-right: $toast-padding-x;
+    }
+
+    [dir="rtl"] & {
+      padding-left: $toast-padding-x;
+    }
+
+    p {
+      color: $text-muted;
+    }
+  }
+
+  .toast-control {
+    display: flex;
+    align-items: center;
+
+    [dir="ltr"] & {
+      margin-left: auto;
+    }
+
+    [dir="rtl"] & {
+      margin-right: auto;
+    }
+
+    .btn-close {
+      padding: 0;
+    }
+  }
+
+  &.success {
+    .toast-action {
+      .vr {
+        background-color: $success;
+      }
+
+      .toast-icon {
+        background-color: $success;
+      }
+    }
+
+    .title {
+      color: $success;
+    }
+  }
+
+  &.error {
+    .toast-action {
+      .vr {
+        background-color: $danger;
+      }
+
+      .toast-icon {
+        background-color: $danger;
+      }
+    }
+
+    .title {
+      color: $danger;
+    }
+  }
+
+  &.warning {
+    .toast-action {
+      .vr {
+        background-color: $warning;
+      }
+
+      .toast-icon {
+        background-color: $warning;
+      }
+    }
+
+    .title {
+      color: $warning;
+    }
+  }
+
+  &.info {
+    .toast-action {
+      .vr {
+        background-color: $info;
+      }
+
+      .toast-icon {
+        background-color: $info;
+      }
+    }
+
+    .title {
+      color: $info;
+    }
+  }
+
+  &:not(.show) {
+    display: block;
+    opacity: 1;
+    transform: translateX(120%);
+  }
+
+  &.show {
+    transform: translateX(0);
+  }
+}

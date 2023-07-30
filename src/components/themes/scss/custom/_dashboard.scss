@@ -1,0 +1,16 @@
+.dashboard-panel {
+  .user-card {
+    &:hover {
+      cursor: pointer;
+    }
+
+    .icon-rounded {
+      @include d-flex-center;
+
+      width: 60px;
+      height: 60px;
+      border-radius: $border-radius-pill;
+      background: $gray-400;
+    }
+  }
+}

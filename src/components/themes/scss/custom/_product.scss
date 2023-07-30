@@ -1,0 +1,48 @@
+.product {
+  .product-image {
+    position: relative;
+    border-radius: $border-radius-sm $border-radius-sm 0 0;
+    overflow: hidden;
+
+    .wishlist-icon {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 1px solid #fff;
+      border-radius: $border-radius-xl;
+      background: #fff;
+      padding: 0;
+    }
+  }
+
+  .card-body {
+    border: 1px solid $gray-300;
+    border-radius: 0 0 $border-radius-sm $border-radius-sm;
+    padding: 1rem;
+
+    @include media-breakpoint-down(md) {
+      padding: 0.6rem;
+    }
+
+    .product-name {
+      margin: 0.375rem 0 1rem;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      @include text-truncate;
+    }
+
+    .product-price {
+      color: $quad;
+      font-weight: $font-weight-semibold;
+    }
+
+    .price-off {
+      color: $tertiary;
+    }
+  }
+}

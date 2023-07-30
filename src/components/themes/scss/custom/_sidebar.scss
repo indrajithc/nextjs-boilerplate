@@ -1,0 +1,143 @@
+$sidebar-width: 264px;
+$sidebar-sm-width: 80px;
+
+.sidebar-panel {
+  width: $sidebar-width;
+  height: calc(100vh - $header-height);
+  background: $white;
+  transition: $transition-base;
+  overflow: auto;
+
+  @include media-breakpoint-down(lg) {
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+    overflow: auto;
+  }
+
+  .nav {
+    padding: 1rem;
+
+    .nav-item {
+      width: 100%;
+    }
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    line-height: 1rem;
+
+    .icon {
+      flex: 0 0 1rem;
+
+      &.open {
+        transform: rotate(90deg);
+        transition: $transition-base;
+      }
+
+      &.close {
+        transition: $transition-base;
+      }
+    }
+
+    span {
+      margin-left: 1rem;
+      transition: $transition-base;
+      @include text-truncate;
+    }
+
+    &.active,
+    &:hover {
+      color: $primary;
+      background: rgba($gray-400, 0.4);
+      border-radius: $border-radius-2xl;
+      min-width: 232px;
+      transition: $transition-base;
+
+      .icon {
+        &.fill-muted {
+          fill: $primary;
+        }
+
+        &.stroke-muted {
+          path {
+            stroke: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  &.close {
+    width: $sidebar-sm-width;
+
+    @include media-breakpoint-down(lg) {
+      width: $sidebar-width;
+      transform: translateX(-100%);
+    }
+
+    .nav-link {
+      &.active,
+      &:hover {
+        min-width: 48px;
+      }
+    }
+
+    .nav-item {
+      &:hover {
+        .collapse {
+          display: block;
+        }
+      }
+    }
+
+    //Collpase submenu sidebar close
+    .collapse,
+    .collapsing {
+      position: absolute;
+      width: 176px;
+      margin-left: 1.5rem;
+      margin-top: 2px;
+      border: 1px solid $gray-400;
+      border-radius: $border-radius-lg;
+      background: $white;
+      z-index: 1;
+
+      .nav {
+        margin: 0;
+        padding: 1rem;
+      }
+
+      .nav-link {
+        padding-left: 1rem;
+        padding-right: 0;
+      }
+    }
+  }
+
+  //Collapse submenu sidebar open
+  .collapse,
+  .collapsing {
+    .nav {
+      border-left: 1px solid $gray-400;
+      margin: 0 0 1rem 1.5rem;
+      padding: 1rem 0 0;
+    }
+
+    .nav-link {
+      border-left: 2px solid transparent;
+      background: transparent;
+      padding: 0.5rem 1.5rem;
+
+      &.active,
+      &:hover {
+        border-left: 2px solid $primary;
+        border-radius: 0;
+        min-width: auto;
+        transition: $transition-base;
+      }
+    }
+  }
+}

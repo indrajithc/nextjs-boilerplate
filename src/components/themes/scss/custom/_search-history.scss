@@ -1,0 +1,15 @@
+.search-history-panel {
+  .users-panel {
+    .user-search {
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        border-radius: $border-radius-sm;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+$header-height: 62px;
+
+header {
+  padding: 1rem 1.5rem;
+  background: $white;
+
+  .navbar-brand {
+    margin-right: 2.5rem;
+
+    @include media-breakpoint-down(md) {
+      padding-right: 0.5rem;
+    }
+
+    img {
+      max-height: 30px;
+    }
+  }
+
+  .btn-toggler {
+    padding: 0;
+    border: 0;
+
+    &:active {
+      border: 0;
+    }
+  }
+
+  .header-nav-icons {
+    display: flex;
+    align-items: center;
+
+    .nav-item {
+      padding-left: 1.5rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding-left: 0.5rem;
+      }
+
+      .nav-link {
+        padding: 0;
+
+        .notification {
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          right: 0;
+          top: 3px;
+          background: $danger;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .navbar-user {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .dropdown-menu {
+      box-shadow: $box-shadow-sm;
+      margin-top: 1.25rem;
+
+      .btn-username {
+        width: 100%;
+        text-align: left;
+        border: 0;
+        border-radius: 0;
+
+        span {
+          display: block;
+        }
+
+        .mail {
+          color: $text-muted;
+        }
+      }
+    }
+
+    .subscriptions {
+      padding-left: 1.5rem;
+
+      @include media-breakpoint-down(md) {
+        padding-left: 0.5rem;
+      }
+
+      .brand {
+        max-height: 27px;
+      }
+
+      .dropdown-menu {
+        min-width: 260px;
+      }
+
+      .link-subscription {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $info;
+      }
+    }
+  }
+}
