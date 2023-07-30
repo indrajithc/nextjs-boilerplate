@@ -18,7 +18,8 @@
     "e2e": "start-server-and-test dev http://localhost:9009 \"cypress open --e2e\"",
     "e2e:headless": "start-server-and-test dev http://localhost:9009 \"cypress run --e2e\"",
     "component": "cypress open --component",
-    "component:headless": "cypress run --component"
+    "component:headless": "cypress run --component",
+    "stylelint": "stylelint"
   },
   "dependencies": {
     "next": "13.4.10",
@@ -45,7 +46,9 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-config-stylelint": "^19.1.0",
     "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-css": "^0.8.1",
     "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.27.5",
@@ -64,11 +67,18 @@
     "start-server-and-test": "^2.0.0",
     "storybook": "^7.2.0-alpha.0",
     "storybook-dark-mode": "^3.0.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
     "typescript": "5.1.6"
   },
   "lint-staged": {
-    "*.{ts,js,jsx,tsx,json,scss,css,html}": [
+    "*.{ts,js,jsx,tsx,json,html}": [
       "eslint"
+    ],
+    "*.{css,scss}": [
+      "stylelint"
     ]
   }
 }
