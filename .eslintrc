@@ -5,8 +5,7 @@
     "plugin:json/recommended",
     "plugin:cypress/recommended",
     "plugin:storybook/recommended",
-    "prettier",
-    "stylelint"
+    "prettier"
   ],
   "globals": {
     "React": "readonly",
