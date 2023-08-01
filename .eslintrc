@@ -195,23 +195,27 @@
           ],
           [
             "@components",
-            "./src/components/common"
+            "./src/common/components"
           ],
           [
             "@skeletons",
-            "./src/components/skeletons"
+            "./src/common/skeletons"
           ],
           [
             "@context",
-            "./src/components/context"
+            "./src/common/context"
           ],
           [
             "@hooks",
-            "./src/components/hooks"
+            "./src/common/hooks"
           ],
           [
             "@core",
-            "./src/components/core"
+            "./src/common/core"
+          ],
+          [
+            "@themes",
+            "./src/common/themes"
           ],
           [
             "@i18n",
