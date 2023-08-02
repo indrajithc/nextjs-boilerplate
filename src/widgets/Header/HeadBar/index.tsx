@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-interface HeadBarContainerProps {}
+interface HeadBarProps {}
 
-const HeadBarContainer: FC<HeadBarContainerProps> = ({}) => {
+const HeadBar: FC<HeadBarProps> = ({}) => {
   return <header>head</header>;
 };
 
-export default HeadBarContainer;
+export default HeadBar;
