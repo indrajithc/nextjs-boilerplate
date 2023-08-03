@@ -1,9 +1,10 @@
 import { FC } from "react";
+import HeadBarView from "./view";
 
 interface HeadBarProps {}
 
 const HeadBar: FC<HeadBarProps> = ({}) => {
-  return <header>head</header>;
+  return <HeadBarView />;
 };
 
 export default HeadBar;
