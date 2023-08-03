@@ -214,6 +214,10 @@
             "./src/common/core"
           ],
           [
+            "@icons",
+            "./src/common/core/icons"
+          ],
+          [
             "@themes",
             "./src/common/themes"
           ],

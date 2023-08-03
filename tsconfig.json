@@ -48,6 +48,9 @@
       "@core/*": [
         "./src/common/core/*"
       ],
+      "@icons/*": [
+        "./src/common/core/icons/*"
+      ],
       "@themes/*": [
         "./src/common/themes/*"
       ],
@@ -66,7 +69,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "libs/dev/FileBase.mjs"
   ],
   "exclude": [
     "node_modules"
