@@ -1,0 +1,4 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="500" x="0" y="0" fill="#868e96" />
+  <text x="25%" y="50%" fill="#dee2e6" font-size="3em">500 X 500</text>
+</svg>
