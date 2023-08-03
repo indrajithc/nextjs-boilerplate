@@ -18,7 +18,17 @@ module.exports = {
       {
         content: ["./src/**/*.{js,jsx,ts,tsx}"],
         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-        safelist: ["html", "body", "img"],
+        safelist: {
+          standard: ["html", "body", "img"],
+          deep: [
+            // whitelist all CSS classes that start
+            // with "mt-" and "mb-"
+            // /^ms-/,
+            // /^mb-/,
+            // whitelist the "highlighted" class
+            "highlighted",
+          ],
+        },
       },
     ],
     "postcss-preset-env",
