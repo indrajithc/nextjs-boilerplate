@@ -54,6 +54,9 @@
       "@themes/*": [
         "./src/common/themes/*"
       ],
+      "@models/*": [
+        "./src/common/models/*"
+      ],
       "@i18n/*": [
         "./src/i18n/*"
       ],
