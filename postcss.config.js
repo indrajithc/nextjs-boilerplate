@@ -1,5 +1,8 @@
 module.exports = {
   plugins: [
+    "postcss-preset-env",
+    "postcss-nested",
+    "postcss-import",
     "postcss-flexbugs-fixes",
     [
       "postcss-preset-env",
@@ -21,7 +24,5 @@ module.exports = {
         safelist: ["html", "body", "img"],
       },
     ],
-    "postcss-preset-env",
-    "postcss-nested",
   ],
 };
