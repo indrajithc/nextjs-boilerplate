@@ -54,6 +54,9 @@
       "@themes/*": [
         "./src/common/themes/*"
       ],
+      "@types/*": [
+        "./src/common/types/*"
+      ],
       "@i18n/*": [
         "./src/i18n/*"
       ],
