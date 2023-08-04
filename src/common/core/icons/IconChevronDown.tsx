@@ -1,8 +1,5 @@
 import { FC } from "react";
-
-interface IconProps {
-  className?: string;
-}
+import IconProps from "@models/IconProps";
 
 const Icon: FC<IconProps> = (props) => {
   return (
