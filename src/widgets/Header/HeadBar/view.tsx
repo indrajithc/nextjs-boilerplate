@@ -5,7 +5,7 @@ import Image from "@components/Image";
 import IconMenu from "@icons/IconMenu";
 import IconHelp from "@icons/IconHelp";
 import IconCategory from "@icons/IconCategory";
-import IconNotification from "@icons/IconChevronDown";
+import IconNotification from "@icons/IconNotification";
 import IconChevronDown from "@icons/IconChevronDown";
 
 interface HeadBarViewProps {}
@@ -28,7 +28,7 @@ const HeadBarView: FC<HeadBarViewProps> = ({}) => {
               <IconHelp className="icon sm fill-primary" />
             </li>
             <li className="nav-item">
-              <div className="subscriptions dropdown">
+              <div className="subscriptions dropdown p-0">
                 <IconCategory className="icon sm stroke-muted" />
               </div>
             </li>
