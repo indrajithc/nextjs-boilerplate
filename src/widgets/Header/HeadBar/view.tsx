@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, MouseEventHandler } from "react";
 import Link from "@components/Link";
 import Image from "@components/Image";
 
@@ -11,9 +11,13 @@ import IconNotification from "@icons/IconNotification";
 
 import Tooltip from "@components/Tooltip";
 
-interface HeadBarViewProps {}
+interface HeadBarViewProps {
+  handleToggleButtonClick: MouseEventHandler<HTMLButtonElement>;
+}
 
-const HeadBarView: FC<HeadBarViewProps> = ({}) => {
+const HeadBarView: FC<HeadBarViewProps> = (props) => {
+  const { handleToggleButtonClick } = props;
+
   return (
     <header>
       <div className="align-items-center justify-content-between g-0 row">
@@ -21,7 +25,7 @@ const HeadBarView: FC<HeadBarViewProps> = ({}) => {
           <Link href={"/"} className="navbar-brand">
             <Image src="/dummy/images/image-svg-172x30.svg" width={172} height={30} alt="logo" />
           </Link>
-          <button type="button" className="btn btn-toggler">
+          <button type="button" className="btn btn-toggler" onClick={handleToggleButtonClick}>
             <IconMenu className="icon fill-muted" />
           </button>
         </div>
