@@ -31,7 +31,10 @@ const Tooltip: FC<TooltipProps> = (props) => {
     }
   };
 
-  useEffect(() => () => handleMouseLeave(), []);
+  useEffect(() => {
+    handleMouseLeave();
+    return () => handleMouseLeave();
+  }, []);
 
   return (
     <div onMouseLeave={handleMouseLeave}>
