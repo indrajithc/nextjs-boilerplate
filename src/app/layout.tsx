@@ -1,10 +1,11 @@
-import { FC } from "react";
+import { FC, ReactNode, Suspense } from "react";
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 
 import "@themes/scss/main-scss/main.scss";
 
 import HeadBar from "@widgets/Header/HeadBar";
+import SideBar from "@widgets/Header/SideBar";
 
 const metadata: Metadata = {
   title: "E-Commerce App",
@@ -22,15 +23,18 @@ const lato = Lato({
   weight: ["300", "400", "700", "900"],
 });
 
-const HomeLayout: FC<homeLayoutProps> = (props) => {
-  const { children } = props;
+const HomeLayout: FC<homeLayoutProps> = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" className={lato.variable}>
       <body>
         <HeadBar />
         <div className="row g-0">
-          <div className="col-auto"></div>
-          <div className="col">{children}</div>
+          <div className="col-auto">
+            <SideBar />
+          </div>
+          <Suspense>
+            <div className="col">{children}</div>
+          </Suspense>
         </div>
       </body>
     </html>
