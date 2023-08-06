@@ -8,6 +8,8 @@ import IconCategory from "@icons/IconCategory";
 import IconNotification from "@icons/IconNotification";
 import IconChevronDown from "@icons/IconChevronDown";
 
+import Tooltip from "@components/Tooltip";
+
 interface HeadBarViewProps {}
 
 const HeadBarView: FC<HeadBarViewProps> = ({}) => {
@@ -25,7 +27,7 @@ const HeadBarView: FC<HeadBarViewProps> = ({}) => {
         <div className="col-auto">
           <ul className="header-nav-icons nav">
             <li className="nav-item">
-              <IconHelp className="icon sm fill-primary" />
+              <Tooltip overlay={<IconHelp className="icon sm fill-primary" />}>Help</Tooltip>
             </li>
             <li className="nav-item">
               <div className="subscriptions dropdown p-0">
