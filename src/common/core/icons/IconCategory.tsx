@@ -1,5 +1,5 @@
 import { FC } from "react";
-import IconProps from "@models/IconProps";
+import { IconProps } from "@lib/types";
 
 const Icon: FC<IconProps> = (props) => {
   return (
