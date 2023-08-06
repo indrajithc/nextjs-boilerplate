@@ -28,6 +28,7 @@ const Tooltip: FC<TooltipProps> = (props) => {
       tooltipRef.current?.classList.add("show");
       tooltipRef.current.style.transform = `translate( ${widthCenter}px, ${bottom}px)`;
       arrowRef.current.style.transform = `translate( ${tooltipWidth / 2 - arrowWidth / 2}px, 0px)`;
+      tooltipRef.current.style.visibility = `unset`;
     }
   };
 
@@ -48,6 +49,7 @@ const Tooltip: FC<TooltipProps> = (props) => {
           position: "absolute",
           inset: "0px auto auto 0px",
           margin: "0px",
+          visibility: "hidden",
         }}
         ref={tooltipRef}
       >
