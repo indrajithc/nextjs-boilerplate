@@ -3,6 +3,7 @@ import { FC } from "react";
 import SampleWidgetOne from "@widgets/SampleWidgetOne";
 import SampleWidgetTwo from "@widgets/SampleWidgetTwo";
 import SampleWidgetThree, { SampleWidgetComponent } from "@widgets/SampleWidgetThree";
+import Footer from "@widgets/Footer";
 
 interface HomePageProps {}
 
@@ -14,6 +15,7 @@ const HomePage: FC<HomePageProps> = () => {
       <SampleWidgetTwo />
       <SampleWidgetThree />
       <SampleWidgetComponent />
+      <Footer />
     </main>
   );
 };
