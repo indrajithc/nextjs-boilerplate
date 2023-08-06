@@ -32,7 +32,9 @@ const HeadBarView: FC<HeadBarViewProps> = (props) => {
         <div className="col-auto">
           <ul className="header-nav-icons nav">
             <li className="nav-item">
-              <Tooltip overlay={<IconHelp className="icon sm fill-primary" />}>Help</Tooltip>
+              <Tooltip placement="bottom" overlay={<IconHelp className="icon sm fill-primary" />}>
+                Help
+              </Tooltip>
             </li>
             <li className="nav-item">
               <div className="subscriptions dropdown p-0">
