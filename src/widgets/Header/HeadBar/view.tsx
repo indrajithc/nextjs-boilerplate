@@ -2,11 +2,12 @@ import { FC } from "react";
 import Link from "@components/Link";
 import Image from "@components/Image";
 
+import HeaderOptionDropdown from "@widgets/Header/HeadBar/HeaderOptionDropdown";
+
 import IconMenu from "@icons/IconMenu";
 import IconHelp from "@icons/IconHelp";
 import IconCategory from "@icons/IconCategory";
 import IconNotification from "@icons/IconNotification";
-import IconChevronDown from "@icons/IconChevronDown";
 
 import Tooltip from "@components/Tooltip";
 
@@ -43,12 +44,7 @@ const HeadBarView: FC<HeadBarViewProps> = ({}) => {
               </a>
             </li>
             <li className="nav-item">
-              <div className="d-none d-md-flex ms-5 dropdown show">
-                <a className="navbar-user">
-                  <span>Michael Richard</span>
-                  <IconChevronDown className="icon xs fill-muted ms-1" />
-                </a>
-              </div>
+              <HeaderOptionDropdown className="d-none d-md-flex ms-3 show" />
             </li>
           </ul>
         </div>
