@@ -4,6 +4,8 @@ import { Lato } from "next/font/google";
 
 import "@themes/scss/main-scss/main.scss";
 
+import RootProvider from "@context/RootProvider";
+
 import HeadBar from "@widgets/Header/HeadBar";
 import SideBar from "@widgets/Header/SideBar";
 
@@ -27,15 +29,17 @@ const HomeLayout: FC<homeLayoutProps> = ({ children }: { children: ReactNode }) 
   return (
     <html lang="en" className={lato.variable}>
       <body>
-        <HeadBar />
-        <div className="row g-0">
-          <div className="col-auto">
-            <SideBar />
+        <RootProvider>
+          <HeadBar />
+          <div className="row g-0">
+            <div className="col-auto">
+              <SideBar />
+            </div>
+            <Suspense>
+              <div className="col">{children}</div>
+            </Suspense>
           </div>
-          <Suspense>
-            <div className="col">{children}</div>
-          </Suspense>
-        </div>
+        </RootProvider>
       </body>
     </html>
   );
