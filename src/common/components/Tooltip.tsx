@@ -1,5 +1,5 @@
 "use client";
-import { FC, ReactNode, cloneElement, useRef, ReactElement, useEffect } from "react";
+import { FC, ReactNode, useRef, ReactElement, useEffect } from "react";
 
 interface TooltipProps {
   overlay: ReactElement<any> | ReactNode;
@@ -9,7 +9,7 @@ interface TooltipProps {
 const Tooltip: FC<TooltipProps> = (props) => {
   const { overlay, children } = props;
 
-  const overlayRef = useRef<HTMLElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
 
@@ -39,7 +39,9 @@ const Tooltip: FC<TooltipProps> = (props) => {
 
   return (
     <div onMouseLeave={handleMouseLeave}>
-      {cloneElement(overlay as React.ReactElement<any>, { onMouseOver: handleMouseOver, ref: overlayRef })}
+      <div onMouseOver={handleMouseOver} ref={overlayRef}>
+        {overlay}
+      </div>
       <div
         className="tooltip bs-tooltip-auto fade show"
         role="tooltip"
