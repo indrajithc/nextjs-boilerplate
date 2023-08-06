@@ -1,5 +1,6 @@
 import { FC } from "react";
 import type { Metadata } from "next";
+import { Lato } from "next/font/google";
 
 import "@themes/scss/main-scss/main.scss";
 
@@ -14,13 +15,23 @@ interface homeLayoutProps {
   children: React.ReactNode;
 }
 
+const lato = Lato({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--bs-body-font-family",
+  weight: ["300", "400", "700", "900"],
+});
+
 const HomeLayout: FC<homeLayoutProps> = (props) => {
   const { children } = props;
   return (
-    <html lang="en">
+    <html lang="en" className={lato.variable}>
       <body>
         <HeadBar />
-        {children}
+        <div className="row g-0">
+          <div className="col-auto"></div>
+          <div className="col">{children}</div>
+        </div>
       </body>
     </html>
   );
