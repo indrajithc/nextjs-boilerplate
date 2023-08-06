@@ -222,8 +222,8 @@
             "./src/common/themes"
           ],
           [
-            "@models",
-            "./src/common/models"
+            "@lib",
+            "./src/common/lib"
           ],
           [
             "@i18n",
