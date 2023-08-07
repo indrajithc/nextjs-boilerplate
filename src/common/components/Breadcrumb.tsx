@@ -4,7 +4,7 @@ type BreadcrumbItem = {
   id: string;
   href: string;
   label: string;
-  active: Boolean;
+  active?: Boolean;
 };
 
 interface BreadcrumbProps {
