@@ -1,20 +1,32 @@
 import { FC } from "react";
 
-import SampleWidgetOne from "@widgets/SampleWidgetOne";
-import SampleWidgetTwo from "@widgets/SampleWidgetTwo";
-import SampleWidgetThree, { SampleWidgetComponent } from "@widgets/SampleWidgetThree";
+import Breadcrumb from "@components/Breadcrumb";
 import Footer from "@widgets/Footer";
 
 interface ProductPageProps {}
 
 const ProductPage: FC<ProductPageProps> = () => {
+  const breadcrumbItems = [
+    {
+      id: "dashboard",
+      href: "/",
+      label: "Dashboard",
+    },
+    {
+      id: "product",
+      href: "/product",
+      label: "Product",
+      active: true,
+    },
+  ];
+
   return (
     <main className="main-content-panel">
-      Product page
-      <SampleWidgetOne />
-      <SampleWidgetTwo />
-      <SampleWidgetThree />
-      <SampleWidgetComponent />
+      <div className="title-panel">
+        <div className="breadcrumb-panel">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
+      </div>
       <Footer />
     </main>
   );
