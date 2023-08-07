@@ -50,7 +50,7 @@ const HeadBarView: FC<HeadBarViewProps> = (props) => {
               </a>
             </li>
             <li className="nav-item">
-              <HeaderOptionDropdown className="d-none d-md-flex ms-3 show" />
+              <HeaderOptionDropdown className="d-none d-md-flex ms-2 show" />
             </li>
           </ul>
         </div>
