@@ -4,6 +4,89 @@ import IconDot from "@icons/IconDot";
 import IconEdit from "@icons/IconEdit";
 import IconDelete from "@icons/IconDelete";
 import IconSort from "@icons/IconSort";
+import IconChevronDown from "@icons/IconChevronDown";
+import IconChevronLeft from "@icons/IconChevronLeft";
+import IconChevronRight from "@icons/IconChevronRight";
+
+interface TableFooterProps {}
+
+const TableFooter: FC<TableFooterProps> = () => {
+  return (
+    <div className="pagination-panel">
+      <div className="justify-content-between gy-2 row">
+        <div className="col-md-4">
+          <div className="align-items-center g-0 row">
+            <div className="col-auto">
+              <p className="me-2">Show</p>
+            </div>
+            <div className="col-auto">
+              <div className="dropdown">
+                <button type="button" aria-haspopup="true" aria-expanded="false" className="btn btn-dropdown">
+                  5
+                  <IconChevronDown className="icon xs fill-black caret" />
+                </button>
+                <div role="menu" aria-hidden="true" className="dropdown-menu">
+                  <button type="button" role="menuitem" className="dropdown-item">
+                    10
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-auto">
+              <p className="ms-2">Entries</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-sm-12 col-md-auto">
+          <div className="justify-content-center row">
+            <div className="col-auto">
+              <nav className="" aria-label="pagination">
+                <ul className="pagination">
+                  <li className="page-item">
+                    <a href="#" aria-label="Previous" className="page-link">
+                      <IconChevronLeft className="icon xs fill-black" />
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a href="#" className="active page-link">
+                      1
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a href="#" className="page-link">
+                      2
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a href="#" className="page-link">
+                      3
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a href="#" className="page-link">
+                      4
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a href="#" className="page-link">
+                      5
+                    </a>
+                  </li>
+                  <li className="page-item disabled">
+                    <a href="#" aria-label="Next" className="page-link">
+                      <IconChevronRight className="icon xs fill-black" />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 interface TableRowProps {}
 
@@ -108,6 +191,7 @@ const Table: FC<TableProps> = ({}) => {
       <TableRow />
       <TableRow />
       <TableRow />
+      <TableFooter />
     </div>
   );
 };
