@@ -1,6 +1,8 @@
 import { FC } from "react";
 
 import Breadcrumb from "@components/Breadcrumb";
+import Link from "@components/Link";
+
 import Footer from "@widgets/Footer";
 import { ProductList } from "@widgets/Product";
 
@@ -31,7 +33,9 @@ const ProductPage: FC<ProductPageProps> = () => {
               <h3>Products</h3>
             </div>
             <div className="col-auto">
-              <button className="btn btn-primary">Add New</button>
+              <Link href="/product/new">
+                <button className="btn btn-primary">Add New</button>
+              </Link>
             </div>
           </div>
         </div>
