@@ -27,7 +27,7 @@ const lato = Lato({
 
 const HomeLayout: FC<homeLayoutProps> = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en" className={lato.variable}>
+    <html lang="en" dir="ltr" className={lato.variable}>
       <body>
         <RootProvider>
           <HeadBar />
