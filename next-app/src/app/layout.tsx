@@ -6,9 +6,6 @@ import "@themes/scss/main-scss/main.scss";
 
 import RootProvider from "@context/RootProvider";
 
-import HeadBar from "@widgets/Header/HeadBar";
-import SideBar from "@widgets/Header/SideBar";
-
 const metadata: Metadata = {
   title: "E-Commerce App",
   description: "E-commerce application",
@@ -30,11 +27,7 @@ const HomeLayout: FC<homeLayoutProps> = ({ children }: { children: ReactNode }) 
     <html lang="en" dir="ltr" className={lato.variable}>
       <body>
         <RootProvider>
-          <HeadBar />
           <div className="row g-0">
-            <div className="col-auto">
-              <SideBar />
-            </div>
             <Suspense>
               <div className="col">{children}</div>
             </Suspense>

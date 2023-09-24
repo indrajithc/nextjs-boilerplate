@@ -1,16 +1,9 @@
 import { FC } from "react";
 
-import Footer from "@widgets/Footer";
-
 interface HomePageProps {}
 
 const HomePage: FC<HomePageProps> = () => {
-  return (
-    <main className="main-content-panel">
-      Home page
-      <Footer />
-    </main>
-  );
+  return <main className="main-content-panel">Home page</main>;
 };
 
 export default HomePage;
