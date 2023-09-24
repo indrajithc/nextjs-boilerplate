@@ -50,7 +50,7 @@ node ./node_modules/@commitlint/cli/lib/cli.js --edit $1
 
 if [ $? -gt 0 ]; then
   echo -e "${RED}${ERROR_ICON} Error: Invalid commit message format.${RESET}"
-  echo -e "Some of the main valid prefixes are:"
+  echo -e "Here are some valid prefixes:"
   for PREFIX in "${!PREFIX_DESCRIPTIONS[@]}"; do
     DESCRIPTION="${PREFIX_DESCRIPTIONS[$PREFIX]}"
     echo -e "${GREEN}${CHECK_ICON} $PREFIX:${RESET} $DESCRIPTION"
