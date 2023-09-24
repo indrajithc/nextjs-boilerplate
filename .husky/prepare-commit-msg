@@ -1,5 +1,37 @@
 #!/bin/sh
 
+FINAL=$?
+
+# Define an associative array with descriptions for each prefix
+declare -A PREFIX_DESCRIPTIONS=(
+  ["build"]="Changes that affect the build system or external dependencies"
+  ["ci"]="Changes to our CI configuration files and scripts"
+  ["docs"]="Documentation only changes"
+  ["feat"]="A new feature"
+  ["fix"]="A bug fix"
+  ["perf"]="A code change that improves performance"
+  ["refactor"]="A code change that neither fixes a bug nor adds a feature"
+  ["style"]="Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+  ["test"]="Adding missing tests or correcting existing tests"
+)
+
+# ANSI color codes
+RED="\e[31m"
+GREEN="\e[32m"
+RESET="\e[0m"
+
+# Character icons
+INFO_ICON="ℹ️"
+ERROR_ICON="❌"
+CHECK_ICON="✅"
+
+# Get the commit message from the user
+COMMIT_MSG_FILE="$1"
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Extract the prefix from the commit message
+PREFIX=$(echo "$COMMIT_MSG" | cut -d ':' -f 1)
+
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.js|\.jsx|\.ts|\.tsx$' | grep -v "\.json$" || echo "")
 
 if [[ "$STAGED_FILES" = "" ]]; then
@@ -16,4 +48,13 @@ BASE_DIRECTORY=$(echo "$FILE" | cut -d "/" -f1)
 }
 node ./node_modules/@commitlint/cli/lib/cli.js --edit $1
 
-exit $?
+if [ $? -gt 0 ]; then
+  echo -e "${RED}${ERROR_ICON} Error: Invalid commit message format.${RESET}"
+  echo -e "Some of the main valid prefixes are:"
+  for PREFIX in "${!PREFIX_DESCRIPTIONS[@]}"; do
+    DESCRIPTION="${PREFIX_DESCRIPTIONS[$PREFIX]}"
+    echo -e "${GREEN}${CHECK_ICON} $PREFIX:${RESET} $DESCRIPTION"
+  done
+  echo -e "Example commit message: ${GREEN}feat:${RESET} add new feature"
+  exit 1
+fi
