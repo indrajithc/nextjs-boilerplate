@@ -30,7 +30,6 @@ CHECK_ICON="✔️"
 
 # Heading message with icon and color (only in terminal)
 if [ "$IS_TERMINAL" = true ]; then
-
   echo -e "${INFO_ICON} ${GREEN}Validator:${RESET} ${GREEN}Checking commit...${RESET}"
 else
   echo -e "Validator: Checking commit..."
