@@ -5,12 +5,46 @@
 
 FINAL=$?
 
-echo -e "\nSource code validator"
+# Check if running in a terminal (not in VS Code)
+if [ "$TERM_PROGRAM" = "" ]; then
+  IS_TERMINAL=false
+else
+  IS_TERMINAL=true
+fi
+
+# ANSI color codes
+if [ "$IS_TERMINAL" = true ]; then
+  RED="\e[31m"
+  GREEN="\e[32m"
+  RESET="\e[0m"
+else
+  RED=""
+  GREEN=""
+  RESET=""
+fi
+
+# Icons
+INFO_ICON="ℹ️"
+ERROR_ICON="❌"
+CHECK_ICON="✔️"
+
+# Heading message with icon and color (only in terminal)
+if [ "$IS_TERMINAL" = true ]; then
+
+  echo -e "${INFO_ICON} ${GREEN}Validator:${RESET} ${GREEN}Checking commit...${RESET}"
+else
+  echo -e "Validator: Checking commit..."
+fi
 
 PREVENT_EDIT=$(git diff HEAD --name-only --relative --diff-filter=ACDMRTUXB* | grep "eslintrc*\|gitignore\|husky*" || echo "")
 
 if [[ "$PREVENT_EDIT" != "" ]]; then
-  echo -e "\n\tCommit hook failed \n"
+  # Error message with icon and color (only in terminal)
+  if [ "$IS_TERMINAL" = true ]; then
+    echo -e "${ERROR_ICON} ${RED}Error:${RESET} ${RED}Configuration files have been updated.${RESET} ${RED}Please review and commit your changes separately.${RESET}"
+  else
+    echo -e "Error: Configuration files have been updated. Please review and commit your changes separately."
+  fi
   exit 1
 fi
 
