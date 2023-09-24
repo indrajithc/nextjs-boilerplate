@@ -1,4 +1,33 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
 
-npx lint-staged
+# shellcheck source=./_/husky.sh
+. "$(dirname "$0")/_/husky.sh"
+
+FINAL=$?
+
+echo -e "\nSource code validator"
+
+PREVENT_EDIT=$(git diff HEAD --name-only --relative --diff-filter=ACDMRTUXB* | grep "eslintrc*\|gitignore\|husky*" || echo "")
+
+if [[ "$PREVENT_EDIT" != "" ]]; then
+  echo -e "\n\tCommit hook failed \n"
+  exit 1
+fi
+
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.js|\.jsx|\.ts|\.tsx$' | grep -v "\.json$" || echo "")
+
+if [[ "$STAGED_FILES" = "" ]]; then
+  echo -e "\nCurrently there are no files staged!"
+  exit 0
+fi
+
+FILE=$(echo "${STAGED_FILES[@]}" | head -1)
+BASE_DIRECTORY=$(echo "$FILE" | cut -d "/" -f1)
+{
+  cd "./$BASE_DIRECTORY/"
+} || {
+  echo "Directory not found."
+}
+node ./node_modules/lint-staged/bin/lint-staged.js
+
+exit $?
