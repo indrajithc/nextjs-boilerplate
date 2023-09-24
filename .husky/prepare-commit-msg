@@ -1,0 +1,19 @@
+#!/bin/sh
+
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.js|\.jsx|\.ts|\.tsx$' | grep -v "\.json$" || echo "")
+
+if [[ "$STAGED_FILES" = "" ]]; then
+  echo -e "\nCurrently there are no files staged!"
+  exit 0
+fi
+
+FILE=$(echo "${STAGED_FILES[@]}" | head -1)
+BASE_DIRECTORY=$(echo "$FILE" | cut -d "/" -f1)
+{
+  cd "./$BASE_DIRECTORY/"
+} || {
+  echo "Directory not found."
+}
+node ./node_modules/@commitlint/cli/lib/cli.js --edit $1
+
+exit $?
