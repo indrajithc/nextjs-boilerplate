@@ -15,15 +15,10 @@ declare -A PREFIX_DESCRIPTIONS=(
   ["test"]="Adding missing tests or correcting existing tests"
 )
 
-# ANSI color codes
-RED="\e[31m"
-GREEN="\e[32m"
-RESET="\e[0m"
-
 # Character icons
 INFO_ICON="ℹ️"
 ERROR_ICON="❌"
-CHECK_ICON="✅"
+CHECK_ICON="✔"
 
 # Get the commit message from the user
 COMMIT_MSG_FILE="$1"
@@ -39,6 +34,20 @@ if [[ "$STAGED_FILES" = "" ]]; then
   exit 0
 fi
 
+# Check if the script is running in a terminal
+if [ "$TERM_PROGRAM" = "" ]; then
+  # If running in VS Code, provide plain text messages without color formatting
+  ERROR_ICON="Error:"
+  VALID_PREFIXES_MESSAGE="Some valid prefixes include:"
+else
+  # If running in a terminal, use ANSI escape codes for color formatting
+  RED="\e[31m"
+  GREEN="\e[32m"
+  RESET="\e[0m"
+  ERROR_ICON="${RED}❌ Error:${RESET}"
+  VALID_PREFIXES_MESSAGE="${GREEN}Some valid prefixes include:${RESET}"
+fi
+
 FILE=$(echo "${STAGED_FILES[@]}" | head -1)
 BASE_DIRECTORY=$(echo "$FILE" | cut -d "/" -f1)
 {
@@ -49,11 +58,11 @@ BASE_DIRECTORY=$(echo "$FILE" | cut -d "/" -f1)
 node ./node_modules/@commitlint/cli/lib/cli.js --edit $1
 
 if [ $? -gt 0 ]; then
-  echo -e "${RED}${ERROR_ICON} Error: Invalid commit message format.${RESET}"
-  echo -e "Here are some valid prefixes:"
+  echo -e "$ERROR_ICON Invalid commit message format."
+  echo -e "$VALID_PREFIXES_MESSAGE"
   for PREFIX in "${!PREFIX_DESCRIPTIONS[@]}"; do
     DESCRIPTION="${PREFIX_DESCRIPTIONS[$PREFIX]}"
-    echo -e "${GREEN}${CHECK_ICON} $PREFIX:${RESET} $DESCRIPTION"
+    echo -e "${GREEN}${CHECK_ICON}  $PREFIX:${RESET} $DESCRIPTION"
   done
   echo -e "Example commit message: ${GREEN}feat:${RESET} add new feature"
   exit 1
