@@ -3,9 +3,9 @@
     "./next-app",
   ],
   "eslint.options": {
-    "overrideConfigFile": "./next-app/.eslintrc"
+    "overrideConfigFile": "./.eslintrc"
   },
-  "prettier.configPath": "./.prettierrc",
+  "prettier.configPath": "./next-app/.prettierrc",
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
