@@ -48,13 +48,6 @@ else
   VALID_PREFIXES_MESSAGE="${GREEN}Some valid prefixes include:${RESET}"
 fi
 
-FILE=$(echo "${STAGED_FILES[@]}" | head -1)
-BASE_DIRECTORY=$(echo "$FILE" | cut -d "/" -f1)
-{
-  cd "./$BASE_DIRECTORY/"
-} || {
-  echo "Directory not found."
-}
 node ./node_modules/@commitlint/cli/lib/cli.js --edit $1
 
 if [ $? -gt 0 ]; then

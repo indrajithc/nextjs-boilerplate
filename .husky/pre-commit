@@ -54,13 +54,6 @@ if [[ "$STAGED_FILES" = "" ]]; then
   exit 0
 fi
 
-FILE=$(echo "${STAGED_FILES[@]}" | head -1)
-BASE_DIRECTORY=$(echo "$FILE" | cut -d "/" -f1)
-{
-  cd "./$BASE_DIRECTORY/"
-} || {
-  echo "Directory not found."
-}
 node ./node_modules/lint-staged/bin/lint-staged.js
 
 exit $?
