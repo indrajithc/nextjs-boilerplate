@@ -1,11 +1,11 @@
 {
   "eslint.workingDirectories": [
-    "./next-app",
+    "./",
   ],
   "eslint.options": {
     "overrideConfigFile": "./.eslintrc"
   },
-  "prettier.configPath": "./next-app/.prettierrc",
+  "prettier.configPath": "./.prettierrc",
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
@@ -22,6 +22,9 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "stylelint.validate": [
     "css",
