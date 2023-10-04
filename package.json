@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "cr_dir=$(pwd) && cd ../ && node \"$cr_dir/node_modules/husky/lib/bin.js\" install",
+    "prepare": "node \"/node_modules/husky/lib/bin.js\" install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "e2e": "start-server-and-test dev http://localhost:9009 \"cypress open --e2e\"",
